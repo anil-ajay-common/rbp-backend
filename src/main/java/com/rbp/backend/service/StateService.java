@@ -23,7 +23,12 @@ public class StateService {
 			list.add(new StateDto(state.getId(), state.getStateName()));
 		});
 		
+
 		return list;
 	}
 
+	public StateDto getState(Long id) {
+		State state=stateDao.findById(id).get(); ;
+		return  new StateDto(state.getId(),state.getStateName());
+	}
 }
