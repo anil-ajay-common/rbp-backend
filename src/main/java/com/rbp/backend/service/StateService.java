@@ -10,8 +10,6 @@ import com.rbp.backend.dao.IStateDao;
 @Service
 public class StateService {
 	
-	@Autowired
-	private IStateDao stateDao;
 	public State updateState(String state) {
 		
 		return null;

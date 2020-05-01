@@ -1,6 +1,5 @@
 package com.rbp.backend.dao;
 
-public interface IStateDao extend JpaRe{
+public interface IStateDao{
 
-	publicL
 }
