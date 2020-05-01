@@ -1,6 +1,9 @@
 package com.rbp.backend.dao;
 
-public interface IStateDao extend JpaRe{
+import org.springframework.data.jpa.repository.JpaRepository;
 
-	publicL
+import com.rbp.backend.Entity.State;
+
+public interface IStateDao extends JpaRepository<State, Long>{
+
 }

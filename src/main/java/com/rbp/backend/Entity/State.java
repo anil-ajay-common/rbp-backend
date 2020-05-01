@@ -2,20 +2,25 @@ package com.rbp.backend.Entity;
 
 import java.util.Date;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+@Entity
 public class State {
 
-	private String id;
+	@Id
+	private Long id;
 	private String stateName;
 	private Date createDate;
-	private String CreatedBy;
+	private String createdBy;
 	private String modifiedBy;
 	private Date modifiedDate;
 	
 	
-	public String getId() {
+	public Long getId() {
 		return id;
 	}
-	public void setId(String id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 	public String getStateName() {
@@ -31,10 +36,10 @@ public class State {
 		this.createDate = createDate;
 	}
 	public String getCreatedBy() {
-		return CreatedBy;
+		return createdBy;
 	}
 	public void setCreatedBy(String createdBy) {
-		CreatedBy = createdBy;
+		createdBy = createdBy;
 	}
 	public String getModifiedBy() {
 		return modifiedBy;
@@ -48,5 +53,12 @@ public class State {
 	public void setModifiedDate(Date modifiedDate) {
 		this.modifiedDate = modifiedDate;
 	}
+	@Override
+	public String toString() {
+		return "State [id=" + id + ", stateName=" + stateName + ", createDate=" + createDate + ", CreatedBy="
+				+ createdBy + ", modifiedBy=" + modifiedBy + ", modifiedDate=" + modifiedDate + "]";
+	}
+	
+	
 	
 }

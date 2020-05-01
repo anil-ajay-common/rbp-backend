@@ -3,18 +3,21 @@ package com.rbp.backend.dto;
 import java.util.Date;
 
 public class StateDto {
-	private String id;
+	private Long id;
 	private String stateName;
-	private Date createDate;
-	private String CreatedBy;
-	private String modifiedBy;
-	private Date modifiedDate;
 	
+	public StateDto(Long id, String stateName) {
+		super();
+		this.id = id;
+		this.stateName = stateName;
+	}
 	
-	public String getId() {
+	public StateDto() {}
+	
+	public Long getId() {
 		return id;
 	}
-	public void setId(String id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 	public String getStateName() {
@@ -22,33 +25,5 @@ public class StateDto {
 	}
 	public void setStateName(String stateName) {
 		this.stateName = stateName;
-	}
-	public Date getCreateDate() {
-		return createDate;
-	}
-	public void setCreateDate(Date createDate) {
-		this.createDate = createDate;
-	}
-	public String getCreatedBy() {
-		return CreatedBy;
-	}
-	public void setCreatedBy(String createdBy) {
-		CreatedBy = createdBy;
-	}
-	public String getModifiedBy() {
-		return modifiedBy;
-	}
-	public void setModifiedBy(String modifiedBy) {
-		this.modifiedBy = modifiedBy;
-	}
-	public Date getModifiedDate() {
-		return modifiedDate;
-	}
-	public void setModifiedDate(Date modifiedDate) {
-		this.modifiedDate = modifiedDate;
-	}
-	
-	
-
-	
+	}	
 }
