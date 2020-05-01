@@ -18,6 +18,8 @@ public class MasterController {
 	
 	@GetMapping("/states")
 	public List<StateDto> getAllStates() {
+		
+		
 		return stateService.getAllStates();
 	}
 	@GetMapping("/states/{id}")
