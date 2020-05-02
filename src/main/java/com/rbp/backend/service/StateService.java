@@ -31,4 +31,12 @@ public class StateService {
 		State state=stateDao.findById(id).get(); ;
 		return  new StateDto(state.getId(),state.getStateName());
 	}
+	
+	public void updateOrSave(State state) {
+		stateDao.save(state);
+	}
+	
+	public void save(State state) {
+		stateDao.save(state);
+	}
 }

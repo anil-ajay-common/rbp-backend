@@ -1,108 +1,115 @@
 package com.rbp.backend.Entity;
 
-import java.io.Serializable;
 import java.util.Date;
-import java.util.List;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
-
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 
 @Entity
-public class State {
-
+public class City  {
 	@Id
 	private Long id;
-	private String stateName;
+	private String cityName;
 	private Date createDate;
 	private String createdBy;
 	private String modifiedBy;
 	private Date modifiedDate;
 	private boolean active;
 	
-	@OneToMany(mappedBy = "state", fetch = FetchType.LAZY,
-				cascade = CascadeType.ALL)
-	private List<City> cities;
+	@ManyToOne(fetch = FetchType.LAZY, optional = true)
+	@JoinColumn(name = "state_id", nullable = false)
+	private State state;
+
 	
 	
-	
-	public State() {
+
+	public City() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	public State(Long id, String stateName, Date createDate, String createdBy, String modifiedBy, Date modifiedDate,
-			boolean active, List<City> cities) {
+
+	public City(Long id, String cityName, Date createDate, String createdBy, String modifiedBy, Date modifiedDate,
+			boolean active, State state) {
 		super();
 		this.id = id;
-		this.stateName = stateName;
+		this.cityName = cityName;
 		this.createDate = createDate;
 		this.createdBy = createdBy;
 		this.modifiedBy = modifiedBy;
 		this.modifiedDate = modifiedDate;
 		this.active = active;
-		this.cities = cities;
+		this.state = state;
 	}
+
 	public Long getId() {
 		return id;
 	}
+
 	public void setId(Long id) {
 		this.id = id;
 	}
-	public String getStateName() {
-		return stateName;
+
+	public String getCityName() {
+		return cityName;
 	}
-	public void setStateName(String stateName) {
-		this.stateName = stateName;
+
+	public void setCityName(String cityName) {
+		this.cityName = cityName;
 	}
+
 	public Date getCreateDate() {
 		return createDate;
 	}
+
 	public void setCreateDate(Date createDate) {
 		this.createDate = createDate;
 	}
+
 	public String getCreatedBy() {
 		return createdBy;
 	}
+
 	public void setCreatedBy(String createdBy) {
-		createdBy = createdBy;
+		this.createdBy = createdBy;
 	}
+
 	public String getModifiedBy() {
 		return modifiedBy;
 	}
+
 	public void setModifiedBy(String modifiedBy) {
 		this.modifiedBy = modifiedBy;
 	}
+
 	public Date getModifiedDate() {
 		return modifiedDate;
 	}
+
 	public void setModifiedDate(Date modifiedDate) {
 		this.modifiedDate = modifiedDate;
 	}
-	
-	
-	public List<City> getCities() {
-		return cities;
+
+	public State getState() {
+		return state;
 	}
-	public void setCities(List<City> cities) {
-		this.cities = cities;
+
+	public void setState(State state) {
+		this.state = state;
 	}
+
 	public boolean isActive() {
 		return active;
 	}
+
 	public void setActive(boolean active) {
 		this.active = active;
 	}
-	@Override
-	public String toString() {
-		return "State [id=" + id + ", stateName=" + stateName + ", createDate=" + createDate + ", createdBy="
-				+ createdBy + ", modifiedBy=" + modifiedBy + ", modifiedDate=" + modifiedDate + ", active=" + active
-				+ ", cities=" + cities + "]";
-	}
 	
 	
 	
 	
+
 }
