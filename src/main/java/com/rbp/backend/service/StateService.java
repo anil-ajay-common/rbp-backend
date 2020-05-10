@@ -30,11 +30,16 @@ public class StateService {
 		Pageable pageable = PageRequest.of(pageNo, pageSize, Sort.by(sortBy));
 		Page<State> pageStatesEntities = stateDao.findAll(pageable);
 		Page<StateDto> pageStatesDtoEntities = pageStatesEntities.map(obj -> {
-			return new StateDto(obj.getId(), obj.getStateName());
+			StateDto dto = new StateDto(obj.getId(), obj.getStateName());
+			dto.setId(obj.getId());
+			dto.setStateName(obj.getStateName());
+			dto.setModifiedBy(obj.getModifiedBy());
+			dto.setCreatedBy(obj.getCreatedBy());
+			dto.setActive(obj.isActive());
+			return dto;
 		});
 		return pageStatesDtoEntities;
 	}
-
 
 	public StateDto getState(Long id) {
 		return stateDao.findById(id)
