@@ -41,7 +41,6 @@ public class StateService {
 		return pageStatesDtoEntities;
 	}
 
-
 	public StateDto getState(Long id) {
 		return stateDao.findById(id)
 		.map(state -> new StateDto(state.getId(), state.getStateName()))

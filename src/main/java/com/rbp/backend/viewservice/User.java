@@ -1,4 +1,4 @@
-package com.rbp.backend.bean;
+package com.rbp.backend.viewservice;
 
 import javax.annotation.ManagedBean;
 import javax.faces.bean.SessionScoped;

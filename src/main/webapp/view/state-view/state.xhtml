@@ -8,18 +8,15 @@
       xmlns:b="http://bootsfaces.net/ui"
       xmlns:c="http://java.sun.com/jsp/jstl/core"
       xmlns:pt="http://xmlns.jcp.org/jsf/passthrough">
-<f:view>
-    <h:head>
-        <title>Template Application</title>
-    </h:head>
-    <h:body>
-
-        <h:form>
-        	<h:inputText value="#{user.firstName}" ></h:inputText>
-        	<h:commandButton value="submit" action="view/state-view/state"></h:commandButton>
-        </h:form>
-
-	<p:spinner />
-    </h:body>
+      <f:view>
+<p:dataTable var="st" value="#{state.getStates()}">
+ 
+    <p:column headerText="ID">
+        <h:outputText value="#{st.id}" />
+    </p:column>
+    <p:column headerText="State Name">
+        <h:outputText value="#{st.stateName}" />
+    </p:column>
+</p:dataTable>
 </f:view>
 </html>
