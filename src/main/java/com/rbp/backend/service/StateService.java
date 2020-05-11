@@ -59,4 +59,8 @@ public class StateService {
 		state.setModifiedDate(new Date());
 		return stateDao.save(state);
 	}
+	
+	public Integer getStateCount() {
+		return (int)stateDao.count();
+	}
 }

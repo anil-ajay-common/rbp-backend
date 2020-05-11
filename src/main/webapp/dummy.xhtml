@@ -10,11 +10,11 @@
       <h:head></h:head>
       <h:body>
       <p:panel header="State Master">
-      	<p:dataTable var="st" value="#{state.stateLazyModel}"
+      	<p:dataTable var="st" value="#{state.dataList}"
       			   lazy="true" paginator="true" rows="5"
       			   paginatorTemplate="{RowsPerPageDropdown} {FirstPageLink}
                      {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink}"
-                   rowsPerPageTemplate="5,10,15" paginatorPosition="bottom" sortBy="id" dynamic="true">
+                   rowsPerPageTemplate="5,10,15" paginatorPosition="bottom" sortBy="id">
  
     <p:column headerText="ID">
         <h:outputText value="#{st.id}" />
